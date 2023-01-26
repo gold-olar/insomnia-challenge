@@ -10,7 +10,7 @@ import { erc1155abi } from "../../abi/ERC1155";
 
 interface NftTransferFormProps {
   nft: {
-    token_address: string;
+    token_address: `0x${string}`;
     token_id: string;
     owner_of: string;
     metadata: string;
