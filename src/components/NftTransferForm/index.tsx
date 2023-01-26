@@ -34,22 +34,25 @@ const NftTransferForm: React.FC<NftTransferFormProps> = ({
 
   const formik = useFormik({
     initialValues: INITIAL_VALUES,
-    onSubmit: async ({ address }) => {
+    onSubmit: async ({ address }: { address: string }) => {
       const abi = nft.contract_type === "ERC721" ? erc721ABI : erc1155abi;
       try {
         setLoading(true);
         const contract = getContract({
           address: nft.token_address,
+          // @ts-ignore
           abi,
         });
 
         const config = await prepareWriteContract({
           address: contract.address,
+          // @ts-ignore
           abi,
           functionName:
             nft.contract_type === "ERC721"
               ? "transferFrom"
               : "safeTransferFrom",
+          // @ts-ignore
           args:
             nft.contract_type === "ERC721"
               ? [nftOwnerAddress, address, nft.token_id]
