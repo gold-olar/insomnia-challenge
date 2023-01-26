@@ -81,9 +81,7 @@ const NFTBalance = () => {
                       {contract_type}
                     </span>
                   </p>
-                  <p className="pointer-events-none block text-sm font-medium text-gray-500">
-                    {nftData?.description}
-                  </p>
+
                   <div className="my-4">
                     <button
                       onClick={() => setOpen(true)}
