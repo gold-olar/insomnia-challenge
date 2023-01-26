@@ -46,7 +46,7 @@ const NftTransferForm: React.FC<NftTransferFormProps> = ({
         });
 
         const config = await prepareWriteContract({
-          address: contract.address,
+          address: contract.address as `0x${string}`,
           // @ts-ignore
           abi,
           functionName:
