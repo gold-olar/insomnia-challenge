@@ -39,6 +39,7 @@ const NftTransferForm: React.FC<NftTransferFormProps> = ({
       try {
         setLoading(true);
         const contract = getContract({
+          // @ts-ignore
           address: nft.token_address,
           // @ts-ignore
           abi,
